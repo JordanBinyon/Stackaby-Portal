@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Stackaby.Database\Stackaby.Database.csproj" />
+      <ProjectReference Include="..\Stackaby.Helper\Stackaby.Helper.csproj" />
+      <ProjectReference Include="..\Stackaby.Interfaces\Stackaby.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>

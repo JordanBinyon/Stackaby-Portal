@@ -1,0 +1,18 @@
+@model Stackaby.Models.Portal.User.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+@using (Html.BeginForm()) {
+    @Html.LabelFor(x => x.FirstName)
+    @Html.EditorFor(x => x.FirstName)
+    @Html.LabelFor(x => x.LastName)
+    @Html.EditorFor(x => x.LastName)
+    @Html.LabelFor(x => x.Email)
+    @Html.EditorFor(x => x.Email)
+    @Html.LabelFor(x => x.Password)
+    @Html.EditorFor(x => x.Password)
+    
+    <input type="submit" value="Submit"/>
+}
