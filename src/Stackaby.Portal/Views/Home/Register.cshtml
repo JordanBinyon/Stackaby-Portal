@@ -4,15 +4,29 @@
     ViewData["Title"] = "Register";
 }
 
+<style>
+    form {
+        height: 100%;
+    }
+</style>
+
 @using (Html.BeginForm()) {
-    @Html.LabelFor(x => x.FirstName)
-    @Html.EditorFor(x => x.FirstName)
-    @Html.LabelFor(x => x.LastName)
-    @Html.EditorFor(x => x.LastName)
-    @Html.LabelFor(x => x.Email)
-    @Html.EditorFor(x => x.Email)
-    @Html.LabelFor(x => x.Password)
-    @Html.EditorFor(x => x.Password)
-    
-    <input type="submit" value="Submit"/>
+    <div style="width: 500px; margin: auto; position: relative; top: 50%; transform: translate(0, -50%);" class="row column align-center medium-6 large-4 container-padded">
+        <form class="log-in-form">
+            <h4 class="text-center">Make a new account</h4>
+            <label>First Name
+                @Html.EditorFor(x => x.FirstName)
+            </label>
+            <label>Last Name
+                @Html.EditorFor(x => x.LastName)
+            </label>
+            <label>Email
+                @Html.EditorFor(x => x.Email)
+            </label>
+            <label>Password
+                @Html.EditorFor(x => x.Password)
+            </label>
+            <p><input type="submit" class="button expanded" value="Log in"></p>
+        </form>
+    </div>
 }

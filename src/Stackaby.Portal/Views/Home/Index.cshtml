@@ -2,7 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div style="width: 500px; margin: auto; position: relative; top: 50%; transform: translate(0, -50%);" class="row column align-center medium-6 large-4 container-padded">
+    <form class="log-in-form">
+        <h4 class="text-center">Log in with you email account</h4>
+        <label>Email
+            <input type="email" placeholder="somebody@example.com">
+        </label>
+        <label>Password
+            <input type="password" placeholder="Password">
+        </label>
+        <input id="show-password" type="checkbox"><label for="show-password">Show password</label>
+        <p><input type="submit" class="button expanded" value="Log in"></p>
+        <p class="text-center"><a href="#">Forgot your password?</a></p>
+    </form>
 </div>

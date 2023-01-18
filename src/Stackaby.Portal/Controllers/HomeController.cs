@@ -47,6 +47,6 @@ public class HomeController : Controller
         
         await _userService.Register(model.FirstName, model.LastName, model.Email, model.Password);
 
-        return View("Index");
+        return RedirectToAction("Index");
     }
 }
