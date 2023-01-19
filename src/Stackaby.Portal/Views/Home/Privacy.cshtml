@@ -1,8 +1,14 @@
-﻿@{
+﻿@using Stackaby.Portal.Services
+@inject IAuthenticationService AuthenticationService;
+
+@{
     ViewData["Title"] = "Privacy Policy";
 }
+
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
 
-@Html.ActionLink("Sign out", "SignOut", "Home")
+<h2>Welcome @(AuthenticationService.GetAuthenticatedUser()?.FullName)</h2>
+
+@Html.ActionLink("Sign out", "SignOut", "Authentication")
