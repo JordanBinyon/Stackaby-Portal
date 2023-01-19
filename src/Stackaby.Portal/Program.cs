@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Stackaby.Database;
 using Stackaby.Interfaces;
+using Stackaby.Portal.Services;
 using Stackaby.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +26,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -40,7 +43,14 @@ void ConfigureServices(IServiceCollection services)
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
     services.AddControllersWithViews();
+    services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/";
+        });
     
     // Dependency Injection
     services.AddScoped<IUserService, UserService>();
+    services.AddScoped<IAuthenticationService, AuthenticationService>();
+    services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 }

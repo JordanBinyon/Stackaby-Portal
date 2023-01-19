@@ -47,7 +47,7 @@ public class UserService : IUserService
             })
             .SingleOrDefaultAsync();
 
-        if (user == null || PasswordHelper.VerifyPassword(password, user.Password))
+        if (user == null || !PasswordHelper.VerifyPassword(password, user.Password))
         {
             return null;
         }

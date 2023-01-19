@@ -12,7 +12,7 @@ using Stackaby.Database;
 namespace Stackaby.Database.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230117215936_Initial")]
+    [Migration("20230119220245_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
