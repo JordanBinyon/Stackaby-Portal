@@ -52,5 +52,6 @@ void ConfigureServices(IServiceCollection services)
     // Dependency Injection
     services.AddScoped<IUserService, UserService>();
     services.AddScoped<IAuthenticationService, AuthenticationService>();
+    services.AddScoped<IProjectService, ProjectService>();
     services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 }

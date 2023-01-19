@@ -10,11 +10,13 @@ public class AuthenticationController : Controller
 {
     private readonly IUserService _userService;
     private readonly IAuthenticationService _authenticationService;
+    private readonly IProjectService _projectService;
 
-    public AuthenticationController(IUserService userService, IAuthenticationService authenticationService)
+    public AuthenticationController(IUserService userService, IAuthenticationService authenticationService, IProjectService projectService)
     {
         _userService = userService;
         _authenticationService = authenticationService;
+        _projectService = projectService;
     }
     
     public IActionResult Login()
@@ -30,6 +32,8 @@ public class AuthenticationController : Controller
             return View(model);
 
         await _authenticationService.SignIn(model.Email, model.Password, true);
+
+        await _projectService.Create("Foo", "Bar");
 
         return RedirectToAction("Privacy", "Home");
     }
