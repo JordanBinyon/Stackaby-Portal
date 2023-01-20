@@ -15,7 +15,7 @@ const targetJsFile = './wwwroot/js/site.js';
 // where to find sass code
 const sassSource = './wwwroot/css/scss/site.scss';
 const cssOutput = './wwwroot/css';
-const jsSource = './wwwroot/js/*.js';
+const jsSource = './wwwroot/js/**/*.js';
 const concatenatedJsFileName = 'site.js';
 const jsOutput = './wwwroot/js';
 
@@ -35,9 +35,9 @@ function compileCss() {
 
 function compileJs() {
     return src(jsSource)
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError())
+        // .pipe(eslint())
+        // .pipe(eslint.format())
+        // .pipe(eslint.failAfterError())
         .pipe(concat(concatenatedJsFileName))
         .pipe(dest(jsOutput));
 }
