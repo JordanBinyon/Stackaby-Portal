@@ -68,8 +68,6 @@
 @import 'components/reveal';
 @import 'components/sticky';
 @import 'components/title-bar';
-@import 'components/top-bar';
-
 // Helpers
 @import 'components/float';
 @import 'components/flex';
@@ -145,7 +143,6 @@
   @include foundation-reveal;
   @include foundation-sticky;
   @include foundation-title-bar;
-  @include foundation-top-bar;
 
   // Helpers
   @include foundation-float-classes;

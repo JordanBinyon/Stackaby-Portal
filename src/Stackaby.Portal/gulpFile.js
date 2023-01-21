@@ -1,45 +1,50 @@
 const { src, dest, series } = require('gulp');
 const autoprefixer = require('autoprefixer');
-const concat = require('gulp-concat');
 const del = require('del');
-const eslint = require('gulp-eslint');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
+const watch = require('gulp-watch');
 
 // existing site files
 const targetCssFile = './wwwroot/css/site.css';
-const targetJsFile = './wwwroot/js/site.js';
 
 // where to find sass code
 const sassSource = './wwwroot/css/scss/site.scss';
+const sassWatchSource = './wwwroot/css/scss/**/*.scss';
 const cssOutput = './wwwroot/css';
-const jsSource = './wwwroot/js/**/*.js';
-const concatenatedJsFileName = 'site.js';
-const jsOutput = './wwwroot/js';
 
 function clean() {
-    return del([targetCssFile, targetJsFile]);
+    return del([targetCssFile]);
 }
 
-function compileCss() {
-    return src(sassSource)
-        .pipe(sourcemaps.init())
-        .pipe(plumber())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([autoprefixer()]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest(cssOutput));
+async function compileCss() {
+    await new Promise((resolve) => {
+        src(sassSource)
+            .pipe(sourcemaps.init())
+            .pipe(plumber())
+            .pipe(sass().on('error', sass.logError))
+            .pipe(postcss([autoprefixer()]))
+            .pipe(sourcemaps.write('.'))
+            .pipe(dest(cssOutput))
+            .on('end', resolve);
+    });
+    
+    console.log("Completed compiling css!");
 }
 
-function compileJs() {
-    return src(jsSource)
-        // .pipe(eslint())
-        // .pipe(eslint.format())
-        // .pipe(eslint.failAfterError())
-        .pipe(concat(concatenatedJsFileName))
-        .pipe(dest(jsOutput));
+function watchFiles() {
+    return watch([sassWatchSource], async function () {
+        console.log("Change detected, cleaning files");
+        clean();
+        
+        console.log("Compiling new files...")
+        await new Promise(() => {
+            compileCss()
+        });
+    });
 }
 
-exports.default = series(clean, compileCss, compileJs);
+exports.default = series(clean, compileCss);
+exports.watch = watchFiles;
