@@ -1,4 +1,5 @@
-@import 'global';
-@import 'foundation';
+@import 'foundation/global';
+@import 'foundation/foundation';
+@import 'site/site';
 
 @include foundation-everything;

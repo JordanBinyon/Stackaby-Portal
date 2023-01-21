@@ -11512,196 +11512,6 @@ exports.default = gulp.series(
   watch
 )
 
-// TODO: remove in favor of "js/foundation"
-import { Foundation as Core } from '../foundation.core';
-import * as CoreUtils from '../foundation.core.utils';
-import { Box } from '../foundation.util.box'
-import { onImagesLoaded } from '../foundation.util.imageLoader';
-import { Keyboard } from '../foundation.util.keyboard';
-import { MediaQuery } from '../foundation.util.mediaQuery';
-import { Motion, Move } from '../foundation.util.motion';
-import { Nest } from '../foundation.util.nest';
-import { Timer } from '../foundation.util.timer';
-import { Touch } from '../foundation.util.touch';
-import { Triggers } from '../foundation.util.triggers';
-import { Abide } from '../foundation.abide';
-import { Accordion } from '../foundation.accordion';
-import { AccordionMenu } from '../foundation.accordionMenu';
-import { Drilldown } from '../foundation.drilldown';
-import { Dropdown } from '../foundation.dropdown';
-import { DropdownMenu } from '../foundation.dropdownMenu';
-import { Equalizer } from '../foundation.equalizer';
-import { Interchange } from '../foundation.interchange';
-import { Magellan } from '../foundation.magellan';
-import { OffCanvas } from '../foundation.offcanvas';
-import { Orbit } from '../foundation.orbit';
-import { ResponsiveMenu } from '../foundation.responsiveMenu';
-import { ResponsiveToggle } from '../foundation.responsiveToggle';
-import { Reveal } from '../foundation.reveal';
-import { Slider } from '../foundation.slider';
-import { SmoothScroll } from '../foundation.smoothScroll';
-import { Sticky } from '../foundation.sticky';
-import { Tabs } from '../foundation.tabs';
-import { Toggler } from '../foundation.toggler';
-import { Tooltip } from '../foundation.tooltip';
-import { ResponsiveAccordionTabs } from '../foundation.responsiveAccordionTabs';
-
-export {
-  Core,
-  CoreUtils,
-  Box,
-  onImagesLoaded,
-  Keyboard,
-  MediaQuery,
-  Motion,
-  Move,
-  Nest,
-  Timer,
-  Touch,
-  Triggers,
-  Abide,
-  Accordion,
-  AccordionMenu,
-  Drilldown,
-  Dropdown,
-  DropdownMenu,
-  Equalizer,
-  Interchange,
-  Magellan,
-  OffCanvas,
-  Orbit,
-  ResponsiveMenu,
-  ResponsiveToggle,
-  Reveal,
-  Slider,
-  SmoothScroll,
-  Sticky,
-  Tabs,
-  Toggler,
-  Tooltip,
-  ResponsiveAccordionTabs
-}
-
-import $ from 'jquery';
-
-import { Foundation } from '../foundation.core';
-import * as CoreUtils from '../foundation.core.utils';
-import { Box } from '../foundation.util.box'
-import { onImagesLoaded } from '../foundation.util.imageLoader';
-import { Keyboard } from '../foundation.util.keyboard';
-import { MediaQuery } from '../foundation.util.mediaQuery';
-import { Motion, Move } from '../foundation.util.motion';
-import { Nest } from '../foundation.util.nest';
-import { Timer } from '../foundation.util.timer';
-import { Touch } from '../foundation.util.touch';
-import { Triggers } from '../foundation.util.triggers';
-import { Abide } from '../foundation.abide';
-import { Accordion } from '../foundation.accordion';
-import { AccordionMenu } from '../foundation.accordionMenu';
-import { Drilldown } from '../foundation.drilldown';
-import { Dropdown } from '../foundation.dropdown';
-import { DropdownMenu } from '../foundation.dropdownMenu';
-import { Equalizer } from '../foundation.equalizer';
-import { Interchange } from '../foundation.interchange';
-import { Magellan } from '../foundation.magellan';
-import { OffCanvas } from '../foundation.offcanvas';
-import { Orbit } from '../foundation.orbit';
-import { ResponsiveMenu } from '../foundation.responsiveMenu';
-import { ResponsiveToggle } from '../foundation.responsiveToggle';
-import { Reveal } from '../foundation.reveal';
-import { Slider } from '../foundation.slider';
-import { SmoothScroll } from '../foundation.smoothScroll';
-import { Sticky } from '../foundation.sticky';
-import { Tabs } from '../foundation.tabs';
-import { Toggler } from '../foundation.toggler';
-import { Tooltip } from '../foundation.tooltip';
-import { ResponsiveAccordionTabs } from '../foundation.responsiveAccordionTabs';
-
-Foundation.addToJquery($);
-
-// Add Foundation Utils to Foundation global namespace for backwards
-// compatibility.
-Foundation.rtl = CoreUtils.rtl;
-Foundation.GetYoDigits = CoreUtils.GetYoDigits;
-Foundation.transitionend = CoreUtils.transitionend;
-Foundation.RegExpEscape = CoreUtils.RegExpEscape;
-Foundation.onLoad = CoreUtils.onLoad;
-
-Foundation.Box = Box;
-Foundation.onImagesLoaded = onImagesLoaded;
-Foundation.Keyboard = Keyboard;
-Foundation.MediaQuery = MediaQuery;
-Foundation.Motion = Motion;
-Foundation.Move = Move;
-Foundation.Nest = Nest;
-Foundation.Timer = Timer;
-
-// Touch and Triggers previously were almost purely sede effect driven,
-// so no need to add it to Foundation, just init them.
-Touch.init($);
-Triggers.init($, Foundation);
-MediaQuery._init();
-
-Foundation.plugin(Abide, 'Abide');
-Foundation.plugin(Accordion, 'Accordion');
-Foundation.plugin(AccordionMenu, 'AccordionMenu');
-Foundation.plugin(Drilldown, 'Drilldown');
-Foundation.plugin(Dropdown, 'Dropdown');
-Foundation.plugin(DropdownMenu, 'DropdownMenu');
-Foundation.plugin(Equalizer, 'Equalizer');
-Foundation.plugin(Interchange, 'Interchange');
-Foundation.plugin(Magellan, 'Magellan');
-Foundation.plugin(OffCanvas, 'OffCanvas');
-Foundation.plugin(Orbit, 'Orbit');
-Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
-Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-Foundation.plugin(Reveal, 'Reveal');
-Foundation.plugin(Slider, 'Slider');
-Foundation.plugin(SmoothScroll, 'SmoothScroll');
-Foundation.plugin(Sticky, 'Sticky');
-Foundation.plugin(Tabs, 'Tabs');
-Foundation.plugin(Toggler, 'Toggler');
-Foundation.plugin(Tooltip, 'Tooltip');
-Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
-
-export {
-  Foundation,
-  CoreUtils,
-  Box,
-  onImagesLoaded,
-  Keyboard,
-  MediaQuery,
-  Motion,
-  Nest,
-  Timer,
-  Touch,
-  Triggers,
-  Abide,
-  Accordion,
-  AccordionMenu,
-  Drilldown,
-  Dropdown,
-  DropdownMenu,
-  Equalizer,
-  Interchange,
-  Magellan,
-  OffCanvas,
-  Orbit,
-  ResponsiveMenu,
-  ResponsiveToggle,
-  Reveal,
-  Slider,
-  SmoothScroll,
-  Sticky,
-  Tabs,
-  Toggler,
-  Tooltip,
-  ResponsiveAccordionTabs
-}
-
-export default Foundation;
-
-
 /*!
  * jQuery JavaScript Library v3.6.3
  * https://jquery.com/
@@ -37519,6 +37329,196 @@ jQuery.fn.extend( {
 return jQuery;
 } );
 
+// TODO: remove in favor of "js/foundation"
+import { Foundation as Core } from '../foundation.core';
+import * as CoreUtils from '../foundation.core.utils';
+import { Box } from '../foundation.util.box'
+import { onImagesLoaded } from '../foundation.util.imageLoader';
+import { Keyboard } from '../foundation.util.keyboard';
+import { MediaQuery } from '../foundation.util.mediaQuery';
+import { Motion, Move } from '../foundation.util.motion';
+import { Nest } from '../foundation.util.nest';
+import { Timer } from '../foundation.util.timer';
+import { Touch } from '../foundation.util.touch';
+import { Triggers } from '../foundation.util.triggers';
+import { Abide } from '../foundation.abide';
+import { Accordion } from '../foundation.accordion';
+import { AccordionMenu } from '../foundation.accordionMenu';
+import { Drilldown } from '../foundation.drilldown';
+import { Dropdown } from '../foundation.dropdown';
+import { DropdownMenu } from '../foundation.dropdownMenu';
+import { Equalizer } from '../foundation.equalizer';
+import { Interchange } from '../foundation.interchange';
+import { Magellan } from '../foundation.magellan';
+import { OffCanvas } from '../foundation.offcanvas';
+import { Orbit } from '../foundation.orbit';
+import { ResponsiveMenu } from '../foundation.responsiveMenu';
+import { ResponsiveToggle } from '../foundation.responsiveToggle';
+import { Reveal } from '../foundation.reveal';
+import { Slider } from '../foundation.slider';
+import { SmoothScroll } from '../foundation.smoothScroll';
+import { Sticky } from '../foundation.sticky';
+import { Tabs } from '../foundation.tabs';
+import { Toggler } from '../foundation.toggler';
+import { Tooltip } from '../foundation.tooltip';
+import { ResponsiveAccordionTabs } from '../foundation.responsiveAccordionTabs';
+
+export {
+  Core,
+  CoreUtils,
+  Box,
+  onImagesLoaded,
+  Keyboard,
+  MediaQuery,
+  Motion,
+  Move,
+  Nest,
+  Timer,
+  Touch,
+  Triggers,
+  Abide,
+  Accordion,
+  AccordionMenu,
+  Drilldown,
+  Dropdown,
+  DropdownMenu,
+  Equalizer,
+  Interchange,
+  Magellan,
+  OffCanvas,
+  Orbit,
+  ResponsiveMenu,
+  ResponsiveToggle,
+  Reveal,
+  Slider,
+  SmoothScroll,
+  Sticky,
+  Tabs,
+  Toggler,
+  Tooltip,
+  ResponsiveAccordionTabs
+}
+
+import $ from 'jquery';
+
+import { Foundation } from '../foundation.core';
+import * as CoreUtils from '../foundation.core.utils';
+import { Box } from '../foundation.util.box'
+import { onImagesLoaded } from '../foundation.util.imageLoader';
+import { Keyboard } from '../foundation.util.keyboard';
+import { MediaQuery } from '../foundation.util.mediaQuery';
+import { Motion, Move } from '../foundation.util.motion';
+import { Nest } from '../foundation.util.nest';
+import { Timer } from '../foundation.util.timer';
+import { Touch } from '../foundation.util.touch';
+import { Triggers } from '../foundation.util.triggers';
+import { Abide } from '../foundation.abide';
+import { Accordion } from '../foundation.accordion';
+import { AccordionMenu } from '../foundation.accordionMenu';
+import { Drilldown } from '../foundation.drilldown';
+import { Dropdown } from '../foundation.dropdown';
+import { DropdownMenu } from '../foundation.dropdownMenu';
+import { Equalizer } from '../foundation.equalizer';
+import { Interchange } from '../foundation.interchange';
+import { Magellan } from '../foundation.magellan';
+import { OffCanvas } from '../foundation.offcanvas';
+import { Orbit } from '../foundation.orbit';
+import { ResponsiveMenu } from '../foundation.responsiveMenu';
+import { ResponsiveToggle } from '../foundation.responsiveToggle';
+import { Reveal } from '../foundation.reveal';
+import { Slider } from '../foundation.slider';
+import { SmoothScroll } from '../foundation.smoothScroll';
+import { Sticky } from '../foundation.sticky';
+import { Tabs } from '../foundation.tabs';
+import { Toggler } from '../foundation.toggler';
+import { Tooltip } from '../foundation.tooltip';
+import { ResponsiveAccordionTabs } from '../foundation.responsiveAccordionTabs';
+
+Foundation.addToJquery($);
+
+// Add Foundation Utils to Foundation global namespace for backwards
+// compatibility.
+Foundation.rtl = CoreUtils.rtl;
+Foundation.GetYoDigits = CoreUtils.GetYoDigits;
+Foundation.transitionend = CoreUtils.transitionend;
+Foundation.RegExpEscape = CoreUtils.RegExpEscape;
+Foundation.onLoad = CoreUtils.onLoad;
+
+Foundation.Box = Box;
+Foundation.onImagesLoaded = onImagesLoaded;
+Foundation.Keyboard = Keyboard;
+Foundation.MediaQuery = MediaQuery;
+Foundation.Motion = Motion;
+Foundation.Move = Move;
+Foundation.Nest = Nest;
+Foundation.Timer = Timer;
+
+// Touch and Triggers previously were almost purely sede effect driven,
+// so no need to add it to Foundation, just init them.
+Touch.init($);
+Triggers.init($, Foundation);
+MediaQuery._init();
+
+Foundation.plugin(Abide, 'Abide');
+Foundation.plugin(Accordion, 'Accordion');
+Foundation.plugin(AccordionMenu, 'AccordionMenu');
+Foundation.plugin(Drilldown, 'Drilldown');
+Foundation.plugin(Dropdown, 'Dropdown');
+Foundation.plugin(DropdownMenu, 'DropdownMenu');
+Foundation.plugin(Equalizer, 'Equalizer');
+Foundation.plugin(Interchange, 'Interchange');
+Foundation.plugin(Magellan, 'Magellan');
+Foundation.plugin(OffCanvas, 'OffCanvas');
+Foundation.plugin(Orbit, 'Orbit');
+Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
+Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
+Foundation.plugin(Reveal, 'Reveal');
+Foundation.plugin(Slider, 'Slider');
+Foundation.plugin(SmoothScroll, 'SmoothScroll');
+Foundation.plugin(Sticky, 'Sticky');
+Foundation.plugin(Tabs, 'Tabs');
+Foundation.plugin(Toggler, 'Toggler');
+Foundation.plugin(Tooltip, 'Tooltip');
+Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
+
+export {
+  Foundation,
+  CoreUtils,
+  Box,
+  onImagesLoaded,
+  Keyboard,
+  MediaQuery,
+  Motion,
+  Nest,
+  Timer,
+  Touch,
+  Triggers,
+  Abide,
+  Accordion,
+  AccordionMenu,
+  Drilldown,
+  Dropdown,
+  DropdownMenu,
+  Equalizer,
+  Interchange,
+  Magellan,
+  OffCanvas,
+  Orbit,
+  ResponsiveMenu,
+  ResponsiveToggle,
+  Reveal,
+  Slider,
+  SmoothScroll,
+  Sticky,
+  Tabs,
+  Toggler,
+  Tooltip,
+  ResponsiveAccordionTabs
+}
+
+export default Foundation;
+
+
 /**
  * what-input - A global utility for tracking the current input method (mouse, keyboard or touch).
  * @version v5.2.12
@@ -38044,259 +38044,6 @@ return /******/ (function(modules) { // webpackBootstrap
  */
 !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define("whatInput",[],t):"object"==typeof exports?exports.whatInput=t():e.whatInput=t()}(this,function(){return i={},n.m=o=[function(e,t){"use strict";e.exports=function(){if("undefined"==typeof document||"undefined"==typeof window)return{ask:function(){return"initial"},element:function(){return null},ignoreKeys:function(){},specificKeys:function(){},registerOnChange:function(){},unRegisterOnChange:function(){}};var t=document.documentElement,n=null,u="initial",s=u,o=Date.now(),i=!1,d=["button","input","select","textarea"],r=[],c=[16,17,18,91,93],w=[],p={keydown:"keyboard",keyup:"keyboard",mousedown:"mouse",mousemove:"mouse",MSPointerDown:"pointer",MSPointerMove:"pointer",pointerdown:"pointer",pointermove:"pointer",touchstart:"touch",touchend:"touch"},a=!1,f={x:null,y:null},l={2:"touch",3:"touch",4:"mouse"},m=!1;try{var e=Object.defineProperty({},"passive",{get:function(){m=!0}});window.addEventListener("test",null,e)}catch(e){}var h=function(){var e=!m||{passive:!0,capture:!0};document.addEventListener("DOMContentLoaded",v,!0),window.PointerEvent?(window.addEventListener("pointerdown",y,!0),window.addEventListener("pointermove",E,!0)):window.MSPointerEvent?(window.addEventListener("MSPointerDown",y,!0),window.addEventListener("MSPointerMove",E,!0)):(window.addEventListener("mousedown",y,!0),window.addEventListener("mousemove",E,!0),"ontouchstart"in window&&(window.addEventListener("touchstart",y,e),window.addEventListener("touchend",y,!0))),window.addEventListener(O(),E,e),window.addEventListener("keydown",y,!0),window.addEventListener("keyup",y,!0),window.addEventListener("focusin",L,!0),window.addEventListener("focusout",b,!0)},v=function(){if(i=!("false"===t.getAttribute("data-whatpersist")||"false"===document.body.getAttribute("data-whatpersist")))try{window.sessionStorage.getItem("what-input")&&(u=window.sessionStorage.getItem("what-input")),window.sessionStorage.getItem("what-intent")&&(s=window.sessionStorage.getItem("what-intent"))}catch(e){}g("input"),g("intent")},y=function(e){var t=e.which,n=p[e.type];"pointer"===n&&(n=S(e));var o=!w.length&&-1===c.indexOf(t),i=w.length&&-1!==w.indexOf(t),r="keyboard"===n&&t&&(o||i)||"mouse"===n||"touch"===n;if(M(n)&&(r=!1),r&&u!==n&&(x("input",u=n),g("input")),r&&s!==n){var a=document.activeElement;a&&a.nodeName&&(-1===d.indexOf(a.nodeName.toLowerCase())||"button"===a.nodeName.toLowerCase()&&!C(a,"form"))&&(x("intent",s=n),g("intent"))}},g=function(e){t.setAttribute("data-what"+e,"input"===e?u:s),k(e)},E=function(e){var t=p[e.type];"pointer"===t&&(t=S(e)),A(e),(!a&&!M(t)||a&&"wheel"===e.type||"mousewheel"===e.type||"DOMMouseScroll"===e.type)&&s!==t&&(x("intent",s=t),g("intent"))},L=function(e){e.target.nodeName?(n=e.target.nodeName.toLowerCase(),t.setAttribute("data-whatelement",n),e.target.classList&&e.target.classList.length&&t.setAttribute("data-whatclasses",e.target.classList.toString().replace(" ",","))):b()},b=function(){n=null,t.removeAttribute("data-whatelement"),t.removeAttribute("data-whatclasses")},x=function(e,t){if(i)try{window.sessionStorage.setItem("what-"+e,t)}catch(e){}},S=function(e){return"number"==typeof e.pointerType?l[e.pointerType]:"pen"===e.pointerType?"touch":e.pointerType},M=function(e){var t=Date.now(),n="mouse"===e&&"touch"===u&&t-o<200;return o=t,n},O=function(){return"onwheel"in document.createElement("div")?"wheel":void 0!==document.onmousewheel?"mousewheel":"DOMMouseScroll"},k=function(e){for(var t=0,n=r.length;t<n;t++)r[t].type===e&&r[t].fn.call(void 0,"input"===e?u:s)},A=function(e){f.x!==e.screenX||f.y!==e.screenY?(a=!1,f.x=e.screenX,f.y=e.screenY):a=!0},C=function(e,t){var n=window.Element.prototype;if(n.matches||(n.matches=n.msMatchesSelector||n.webkitMatchesSelector),n.closest)return e.closest(t);do{if(e.matches(t))return e;e=e.parentElement||e.parentNode}while(null!==e&&1===e.nodeType);return null};return"addEventListener"in window&&Array.prototype.indexOf&&(p[O()]="mouse",h()),{ask:function(e){return"intent"===e?s:u},element:function(){return n},ignoreKeys:function(e){c=e},specificKeys:function(e){w=e},registerOnChange:function(e,t){r.push({fn:e,type:t||"input"})},unRegisterOnChange:function(e){var t=function(e){for(var t=0,n=r.length;t<n;t++)if(r[t].fn===e)return t}(e);!t&&0!==t||r.splice(t,1)},clearStorage:function(){window.sessionStorage.clear()}}}()}],n.c=i,n.p="",n(0);function n(e){if(i[e])return i[e].exports;var t=i[e]={exports:{},id:e,loaded:!1};return o[e].call(t.exports,t,t.exports,n),t.loaded=!0,t.exports}var o,i});
 //# sourceMappingURL=what-input.min.js.map
-
-import { Foundation } from './foundation.core';
-
-import { Abide } from '../../foundation.abide';
-Foundation.plugin(Abide, 'Abide');
-
-export { Foundation, Abide };
-
-import { Foundation } from './foundation.core';
-
-import { Accordion } from '../../foundation.accordion';
-Foundation.plugin(Accordion, 'Accordion');
-
-export { Foundation, Accordion };
-
-import { Foundation } from './foundation.core';
-
-import { AccordionMenu } from '../../foundation.accordionMenu';
-Foundation.plugin(AccordionMenu, 'AccordionMenu');
-
-export { Foundation, AccordionMenu };
-
-// --- Foundation Core API ---
-// Initialize Foundation and add some utilities to its public API for backward compatibility.
-// Please note that every utility do not have to be added to the core API.
-import $ from 'jquery';
-import { Foundation } from '../../foundation.core';
-import { Plugin } from '../../foundation.core.plugin';
-import { rtl, GetYoDigits, transitionend, RegExpEscape, onLoad } from '../../foundation.core.utils';
-
-Foundation.addToJquery($);
-
-// Every plugin depends on plugin now, we can include that on the core for the
-// script inclusion path.
-Foundation.Plugin = Plugin;
-
-// These are now separated out, but historically were a part of this module,
-// and since this is here for backwards compatibility we include them in
-// this entry.
-Foundation.rtl = rtl;
-Foundation.GetYoDigits = GetYoDigits;
-Foundation.transitionend = transitionend;
-Foundation.RegExpEscape = RegExpEscape;
-Foundation.onLoad = onLoad;
-
-window.Foundation = Foundation;
-
-// --- Foundation Core exports ---
-// Export "Plugin" and all core utilities, since the `foundation.core` entry plays the role of
-// all core source files.
-
-export { Foundation };
-export * from '../../foundation.core.plugin';
-export * from '../../foundation.core.utils';
-
-import { Foundation } from './foundation.core';
-
-import { Drilldown } from '../../foundation.drilldown';
-Foundation.plugin(Drilldown, 'Drilldown');
-
-export { Foundation, Drilldown };
-
-import { Foundation } from './foundation.core';
-
-import { Dropdown } from '../../foundation.dropdown';
-Foundation.plugin(Dropdown, 'Dropdown');
-
-export { Foundation, Dropdown };
-
-import { Foundation } from './foundation.core';
-
-import { DropdownMenu } from '../../foundation.dropdownMenu';
-Foundation.plugin(DropdownMenu, 'DropdownMenu');
-
-export { Foundation, DropdownMenu};
-
-import { Foundation } from './foundation.core';
-
-import { Equalizer } from '../../foundation.equalizer';
-Foundation.plugin(Equalizer, 'Equalizer');
-
-export { Foundation, Equalizer };
-
-import { Foundation } from './foundation.core';
-
-import { Interchange } from '../../foundation.interchange';
-Foundation.plugin(Interchange, 'Interchange');
-
-export { Foundation, Interchange };
-
-import { Foundation } from './foundation.core';
-
-import { Magellan } from '../../foundation.magellan';
-Foundation.plugin(Magellan, 'Magellan');
-
-export { Foundation, Magellan };
-
-import { Foundation } from './foundation.core';
-
-import { OffCanvas } from '../../foundation.offcanvas';
-Foundation.plugin(OffCanvas, 'OffCanvas');
-
-export { Foundation, OffCanvas };
-
-import { Foundation } from './foundation.core';
-
-import { Orbit } from '../../foundation.orbit';
-Foundation.plugin(Orbit, 'Orbit');
-
-export { Foundation, Orbit };
-
-import { Foundation } from './foundation.core';
-
-import { ResponsiveAccordionTabs } from '../../foundation.responsiveAccordionTabs';
-Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
-
-export { Foundation, ResponsiveAccordionTabs };
-
-import { Foundation } from './foundation.core';
-
-import { ResponsiveMenu } from '../../foundation.responsiveMenu';
-Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
-
-export { Foundation, ResponsiveMenu };
-
-import { Foundation } from './foundation.core';
-
-import { ResponsiveToggle } from '../../foundation.responsiveToggle';
-Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-
-export { Foundation, ResponsiveToggle };
-
-import { Foundation } from './foundation.core';
-
-import { Reveal } from '../../foundation.reveal';
-Foundation.plugin(Reveal, 'Reveal');
-
-export { Foundation, Reveal };
-
-import { Foundation } from './foundation.core';
-
-import { Slider } from '../../foundation.slider';
-Foundation.plugin(Slider, 'Slider');
-
-export { Foundation, Slider };
-
-import { Foundation } from './foundation.core';
-
-import { SmoothScroll } from '../../foundation.smoothScroll';
-Foundation.plugin(SmoothScroll, 'SmoothScroll');
-
-export { Foundation, SmoothScroll };
-
-import { Foundation } from './foundation.core';
-
-import { Sticky } from '../../foundation.sticky';
-Foundation.plugin(Sticky, 'Sticky');
-
-export { Foundation, Sticky };
-
-import { Foundation } from './foundation.core';
-
-import { Tabs } from '../../foundation.tabs';
-Foundation.plugin(Tabs, 'Tabs');
-
-export { Foundation, Tabs };
-
-import { Foundation } from './foundation.core';
-
-import { Toggler } from '../../foundation.toggler';
-Foundation.plugin(Toggler, 'Toggler');
-
-export { Foundation, Toggler };
-
-import { Foundation } from './foundation.core';
-
-import { Tooltip } from '../../foundation.tooltip';
-Foundation.plugin(Tooltip, 'Tooltip');
-
-export { Foundation, Tooltip };
-
-import { Foundation } from './foundation.core';
-import { Box } from '../../foundation.util.box';
-
-Foundation.Box = Box;
-
-export { Foundation, Box };
-
-import { Foundation } from './foundation.core';
-
-import { onImagesLoaded } from '../../foundation.util.imageLoader';
-
-Foundation.onImagesLoaded = onImagesLoaded;
-
-export { Foundation, onImagesLoaded };
-
-import { Foundation } from './foundation.core';
-import { Keyboard } from '../../foundation.util.keyboard';
-
-Foundation.Keyboard = Keyboard;
-
-export { Foundation, Keyboard };
-
-import { Foundation } from './foundation.core';
-import { MediaQuery } from '../../foundation.util.mediaQuery';
-
-Foundation.MediaQuery = MediaQuery;
-Foundation.MediaQuery._init();
-
-export { Foundation, MediaQuery };
-
-import { Foundation } from './foundation.core';
-import { Motion, Move } from '../../foundation.util.motion';
-
-Foundation.Motion = Motion;
-Foundation.Move = Move;
-
-export { Foundation, Motion, Move };
-
-import { Foundation } from './foundation.core';
-
-import { Nest } from '../../foundation.util.nest';
-
-Foundation.Nest = Nest;
-
-export { Foundation, Nest };
-
-import { Foundation } from './foundation.core';
-
-import { Timer } from '../../foundation.util.timer';
-
-Foundation.Timer = Timer;
-
-export { Foundation, Timer };
-
-import $ from 'jquery';
-
-import { Touch } from '../../foundation.util.touch';
-
-Touch.init($);
-
-window.Foundation.Touch = Touch;
-
-export { Foundation } from './foundation.core';
-export { Touch };
-
-import { Foundation } from './foundation.core';
-import $ from 'jquery';
-
-import { Triggers } from '../../foundation.util.triggers';
-Triggers.init($, Foundation);
-
-export { Foundation, Triggers };
 
 define( [
 	"../core",
@@ -41286,68 +41033,6 @@ return jQuery;
 } );
 
 define( [
-	"../core"
-], function( jQuery ) {
-
-"use strict";
-
-// Register as a named AMD module, since jQuery can be concatenated with other
-// files that may use define, but not via a proper concatenation script that
-// understands anonymous AMD modules. A named AMD is safest and most robust
-// way to register. Lowercase jquery is used because AMD module names are
-// derived from file names, and jQuery is normally delivered in a lowercase
-// file name. Do this after creating the global so that if an AMD module wants
-// to call noConflict to hide this version of jQuery, it will work.
-
-// Note that for maximum portability, libraries that are not jQuery should
-// declare themselves as anonymous modules, and avoid setting a global if an
-// AMD loader is present. jQuery is a special case. For more information, see
-// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
-
-if ( typeof define === "function" && define.amd ) {
-	define( "jquery", [], function() {
-		return jQuery;
-	} );
-}
-
-} );
-
-define( [
-	"../core"
-], function( jQuery ) {
-
-"use strict";
-
-var
-
-	// Map over jQuery in case of overwrite
-	_jQuery = window.jQuery,
-
-	// Map over the $ in case of overwrite
-	_$ = window.$;
-
-jQuery.noConflict = function( deep ) {
-	if ( window.$ === jQuery ) {
-		window.$ = _$;
-	}
-
-	if ( deep && window.jQuery === jQuery ) {
-		window.jQuery = _jQuery;
-	}
-
-	return jQuery;
-};
-
-// Expose jQuery and $ identifiers, even in AMD
-// (trac-7102#comment:10, https://github.com/jquery/jquery/pull/557)
-// and CommonJS for browser emulators (trac-13566)
-if ( typeof noGlobal === "undefined" ) {
-	window.jQuery = window.$ = jQuery;
-}
-
-} );
-
-define( [
 	"../core",
 	"../core/toType",
 	"../core/isAttached",
@@ -41613,6 +41298,68 @@ jQuery._evalUrl = function( url, options, doc ) {
 };
 
 return jQuery._evalUrl;
+
+} );
+
+define( [
+	"../core"
+], function( jQuery ) {
+
+"use strict";
+
+// Register as a named AMD module, since jQuery can be concatenated with other
+// files that may use define, but not via a proper concatenation script that
+// understands anonymous AMD modules. A named AMD is safest and most robust
+// way to register. Lowercase jquery is used because AMD module names are
+// derived from file names, and jQuery is normally delivered in a lowercase
+// file name. Do this after creating the global so that if an AMD module wants
+// to call noConflict to hide this version of jQuery, it will work.
+
+// Note that for maximum portability, libraries that are not jQuery should
+// declare themselves as anonymous modules, and avoid setting a global if an
+// AMD loader is present. jQuery is a special case. For more information, see
+// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
+
+if ( typeof define === "function" && define.amd ) {
+	define( "jquery", [], function() {
+		return jQuery;
+	} );
+}
+
+} );
+
+define( [
+	"../core"
+], function( jQuery ) {
+
+"use strict";
+
+var
+
+	// Map over jQuery in case of overwrite
+	_jQuery = window.jQuery,
+
+	// Map over the $ in case of overwrite
+	_$ = window.$;
+
+jQuery.noConflict = function( deep ) {
+	if ( window.$ === jQuery ) {
+		window.$ = _$;
+	}
+
+	if ( deep && window.jQuery === jQuery ) {
+		window.jQuery = _jQuery;
+	}
+
+	return jQuery;
+};
+
+// Expose jQuery and $ identifiers, even in AMD
+// (trac-7102#comment:10, https://github.com/jquery/jquery/pull/557)
+// and CommonJS for browser emulators (trac-13566)
+if ( typeof noGlobal === "undefined" ) {
+	window.jQuery = window.$ = jQuery;
+}
 
 } );
 
@@ -41930,6 +41677,259 @@ define( function() {
 return "[\\x20\\t\\r\\n\\f]";
 
 } );
+
+import { Foundation } from './foundation.core';
+
+import { Abide } from '../../foundation.abide';
+Foundation.plugin(Abide, 'Abide');
+
+export { Foundation, Abide };
+
+import { Foundation } from './foundation.core';
+
+import { Accordion } from '../../foundation.accordion';
+Foundation.plugin(Accordion, 'Accordion');
+
+export { Foundation, Accordion };
+
+import { Foundation } from './foundation.core';
+
+import { AccordionMenu } from '../../foundation.accordionMenu';
+Foundation.plugin(AccordionMenu, 'AccordionMenu');
+
+export { Foundation, AccordionMenu };
+
+// --- Foundation Core API ---
+// Initialize Foundation and add some utilities to its public API for backward compatibility.
+// Please note that every utility do not have to be added to the core API.
+import $ from 'jquery';
+import { Foundation } from '../../foundation.core';
+import { Plugin } from '../../foundation.core.plugin';
+import { rtl, GetYoDigits, transitionend, RegExpEscape, onLoad } from '../../foundation.core.utils';
+
+Foundation.addToJquery($);
+
+// Every plugin depends on plugin now, we can include that on the core for the
+// script inclusion path.
+Foundation.Plugin = Plugin;
+
+// These are now separated out, but historically were a part of this module,
+// and since this is here for backwards compatibility we include them in
+// this entry.
+Foundation.rtl = rtl;
+Foundation.GetYoDigits = GetYoDigits;
+Foundation.transitionend = transitionend;
+Foundation.RegExpEscape = RegExpEscape;
+Foundation.onLoad = onLoad;
+
+window.Foundation = Foundation;
+
+// --- Foundation Core exports ---
+// Export "Plugin" and all core utilities, since the `foundation.core` entry plays the role of
+// all core source files.
+
+export { Foundation };
+export * from '../../foundation.core.plugin';
+export * from '../../foundation.core.utils';
+
+import { Foundation } from './foundation.core';
+
+import { Drilldown } from '../../foundation.drilldown';
+Foundation.plugin(Drilldown, 'Drilldown');
+
+export { Foundation, Drilldown };
+
+import { Foundation } from './foundation.core';
+
+import { Dropdown } from '../../foundation.dropdown';
+Foundation.plugin(Dropdown, 'Dropdown');
+
+export { Foundation, Dropdown };
+
+import { Foundation } from './foundation.core';
+
+import { DropdownMenu } from '../../foundation.dropdownMenu';
+Foundation.plugin(DropdownMenu, 'DropdownMenu');
+
+export { Foundation, DropdownMenu};
+
+import { Foundation } from './foundation.core';
+
+import { Equalizer } from '../../foundation.equalizer';
+Foundation.plugin(Equalizer, 'Equalizer');
+
+export { Foundation, Equalizer };
+
+import { Foundation } from './foundation.core';
+
+import { Interchange } from '../../foundation.interchange';
+Foundation.plugin(Interchange, 'Interchange');
+
+export { Foundation, Interchange };
+
+import { Foundation } from './foundation.core';
+
+import { Magellan } from '../../foundation.magellan';
+Foundation.plugin(Magellan, 'Magellan');
+
+export { Foundation, Magellan };
+
+import { Foundation } from './foundation.core';
+
+import { OffCanvas } from '../../foundation.offcanvas';
+Foundation.plugin(OffCanvas, 'OffCanvas');
+
+export { Foundation, OffCanvas };
+
+import { Foundation } from './foundation.core';
+
+import { Orbit } from '../../foundation.orbit';
+Foundation.plugin(Orbit, 'Orbit');
+
+export { Foundation, Orbit };
+
+import { Foundation } from './foundation.core';
+
+import { ResponsiveAccordionTabs } from '../../foundation.responsiveAccordionTabs';
+Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
+
+export { Foundation, ResponsiveAccordionTabs };
+
+import { Foundation } from './foundation.core';
+
+import { ResponsiveMenu } from '../../foundation.responsiveMenu';
+Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
+
+export { Foundation, ResponsiveMenu };
+
+import { Foundation } from './foundation.core';
+
+import { ResponsiveToggle } from '../../foundation.responsiveToggle';
+Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
+
+export { Foundation, ResponsiveToggle };
+
+import { Foundation } from './foundation.core';
+
+import { Reveal } from '../../foundation.reveal';
+Foundation.plugin(Reveal, 'Reveal');
+
+export { Foundation, Reveal };
+
+import { Foundation } from './foundation.core';
+
+import { Slider } from '../../foundation.slider';
+Foundation.plugin(Slider, 'Slider');
+
+export { Foundation, Slider };
+
+import { Foundation } from './foundation.core';
+
+import { SmoothScroll } from '../../foundation.smoothScroll';
+Foundation.plugin(SmoothScroll, 'SmoothScroll');
+
+export { Foundation, SmoothScroll };
+
+import { Foundation } from './foundation.core';
+
+import { Sticky } from '../../foundation.sticky';
+Foundation.plugin(Sticky, 'Sticky');
+
+export { Foundation, Sticky };
+
+import { Foundation } from './foundation.core';
+
+import { Tabs } from '../../foundation.tabs';
+Foundation.plugin(Tabs, 'Tabs');
+
+export { Foundation, Tabs };
+
+import { Foundation } from './foundation.core';
+
+import { Toggler } from '../../foundation.toggler';
+Foundation.plugin(Toggler, 'Toggler');
+
+export { Foundation, Toggler };
+
+import { Foundation } from './foundation.core';
+
+import { Tooltip } from '../../foundation.tooltip';
+Foundation.plugin(Tooltip, 'Tooltip');
+
+export { Foundation, Tooltip };
+
+import { Foundation } from './foundation.core';
+import { Box } from '../../foundation.util.box';
+
+Foundation.Box = Box;
+
+export { Foundation, Box };
+
+import { Foundation } from './foundation.core';
+
+import { onImagesLoaded } from '../../foundation.util.imageLoader';
+
+Foundation.onImagesLoaded = onImagesLoaded;
+
+export { Foundation, onImagesLoaded };
+
+import { Foundation } from './foundation.core';
+import { Keyboard } from '../../foundation.util.keyboard';
+
+Foundation.Keyboard = Keyboard;
+
+export { Foundation, Keyboard };
+
+import { Foundation } from './foundation.core';
+import { MediaQuery } from '../../foundation.util.mediaQuery';
+
+Foundation.MediaQuery = MediaQuery;
+Foundation.MediaQuery._init();
+
+export { Foundation, MediaQuery };
+
+import { Foundation } from './foundation.core';
+import { Motion, Move } from '../../foundation.util.motion';
+
+Foundation.Motion = Motion;
+Foundation.Move = Move;
+
+export { Foundation, Motion, Move };
+
+import { Foundation } from './foundation.core';
+
+import { Nest } from '../../foundation.util.nest';
+
+Foundation.Nest = Nest;
+
+export { Foundation, Nest };
+
+import { Foundation } from './foundation.core';
+
+import { Timer } from '../../foundation.util.timer';
+
+Foundation.Timer = Timer;
+
+export { Foundation, Timer };
+
+import $ from 'jquery';
+
+import { Touch } from '../../foundation.util.touch';
+
+Touch.init($);
+
+window.Foundation.Touch = Touch;
+
+export { Foundation } from './foundation.core';
+export { Touch };
+
+import { Foundation } from './foundation.core';
+import $ from 'jquery';
+
+import { Triggers } from '../../foundation.util.triggers';
+Triggers.init($, Foundation);
+
+export { Foundation, Triggers };
 
 module.exports = (() => {
   /*
